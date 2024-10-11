@@ -1,4 +1,8 @@
+import 'package:cunadelsabor/screens/aboutscreen.dart';
+import 'package:cunadelsabor/screens/bebidasscreen.dart';
+import 'package:cunadelsabor/screens/contactoscreen.dart';
 import 'package:cunadelsabor/screens/entradasscreen.dart';
+import 'package:cunadelsabor/screens/termcondscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:cunadelsabor/screens/platillosscreen.dart';
 import 'package:cunadelsabor/screens/postresscreen.dart';
@@ -76,6 +80,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 title: Text('Bebidas'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Bebidasscreen()),
+                  );
+                },
               ),
               Column(
                 children: [
@@ -84,12 +94,32 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   ListTile(
                     title: Text('Contacto'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Contactoscreen()),
+                      );
+                    },
                   ),
                   ListTile(
                     title: Text('Acerca de'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Aboutscreen()),
+                      );
+                    },
                   ),
                   ListTile(
                     title: Text('Terminos y condiciones'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Termcondscreen()),
+                      );
+                    },
                   ),
                 ],
               )

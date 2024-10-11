@@ -1,10 +1,10 @@
 import 'package:cunadelsabor/main.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const Postresscreen());
+void main() => runApp(const Aboutscreen());
 
-class Postresscreen extends StatelessWidget {
-  const Postresscreen({super.key});
+class Aboutscreen extends StatelessWidget {
+  const Aboutscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +13,13 @@ class Postresscreen extends StatelessWidget {
     return MaterialApp(
       //quitar esto antes de empezar a hacer las rutas
       navigatorKey: _navigatorKey,
-      title: 'Material App',
+      title: '',
       home: Scaffold(
         appBar: AppBar(
           title: Text('La Cuna del Sabor'),
           backgroundColor: Color(0xFF7d1a49),
           //quitar esto antes de empezar a hacer las rutas
+
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {
@@ -32,7 +33,7 @@ class Postresscreen extends StatelessWidget {
           //quitar esto antes de empezar a hacer las rutas
         ),
         body: const Center(
-          child: Text('Postres'),
+          child: Text('Entradas'),
         ),
       ),
     );
