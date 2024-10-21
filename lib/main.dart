@@ -2,6 +2,7 @@ import 'package:cunadelsabor/screens/aboutscreen.dart';
 import 'package:cunadelsabor/screens/bebidasscreen.dart';
 import 'package:cunadelsabor/screens/contactoscreen.dart';
 import 'package:cunadelsabor/screens/entradasscreen.dart';
+import 'package:cunadelsabor/screens/reservascreen.dart';
 import 'package:cunadelsabor/screens/termcondscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:cunadelsabor/screens/platillosscreen.dart';
@@ -12,9 +13,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'La Cuna del Sabor',
       home: DefaultTabController(
         length: 2,
@@ -25,6 +29,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -37,10 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text('La Cuna del Sabor'),
-        backgroundColor: Color(0xFF7d1a49),
+        title: const Text(
+          'ComidApp',
+          style: TextStyle(
+              color: Colors.white), // Cambia el color de la fuente a blanco
+        ),
+        backgroundColor: const Color(0xFF7d1a49),
         leading: IconButton(
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           onPressed: () {
             _scaffoldKey.currentState?.openDrawer();
           },
@@ -48,76 +58,92 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: Drawer(
         child: Container(
-          color: Color(0xFFdecfea),
+          color: const Color(0xFFdecfea),
           child: ListView(
             children: [
               ListTile(
-                title: Text('Entradas'),
+                title: const Text('Entradas'),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Entradasscreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const Entradasscreen()),
                   );
                 },
               ),
               ListTile(
-                title: Text('Platos fuertes'),
+                title: const Text('Platos fuertes'),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Platillosscreen()),
+                    MaterialPageRoute(
+                      builder: (context) => Platillosscreen(),
+                    ),
                   );
                 },
               ),
               ListTile(
-                title: Text('Postres'),
+                title: const Text('Postres'),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Postresscreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const Postresscreen()),
                   );
                 },
               ),
               ListTile(
-                title: Text('Bebidas'),
+                title: const Text('Bebidas'),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Bebidasscreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const Bebidasscreen()),
                   );
                 },
               ),
               Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 220,
                   ),
                   ListTile(
-                    title: Text('Contacto'),
+                    title: const Text('Reservas'),
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Contactoscreen()),
+                            builder: (context) => ReservasScreen()),
                       );
                     },
                   ),
                   ListTile(
-                    title: Text('Acerca de'),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Aboutscreen()),
-                      );
-                    },
-                  ),
-                  ListTile(
-                    title: Text('Terminos y condiciones'),
+                    title: const Text('Contacto'),
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Termcondscreen()),
+                            builder: (context) => ContactosScreen()),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Acerca de'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Aboutscreen()),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Terminos y condiciones'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Termcondscreen()),
                       );
                     },
                   ),
@@ -128,15 +154,16 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Container(
-        color: Color(0xFFf3f3f3),
+        color: const Color(0xFFf3f3f3),
         child: TabBarView(
           children: [
-            Icon(Icons.home, color: Colors.black),
-            Icon(Icons.person, color: Colors.black),
+            Image.asset('assets/comida1.jpg'),
+            const Icon(Icons.home, color: Colors.black),
+            const Icon(Icons.person, color: Colors.black),
           ],
         ),
       ),
-      bottomNavigationBar: TabBar(
+      bottomNavigationBar: const TabBar(
         tabs: [
           Tab(icon: Icon(Icons.home, color: Colors.black)),
           Tab(icon: Icon(Icons.person, color: Colors.black)),

@@ -1,0 +1,61 @@
+body: ListView(
+        padding: const EdgeInsets.all(8.0),
+        children: [
+          _buildProductCard(
+            '', // URL de la imagen del producto
+            'Nombre del Producto 1',
+            'Descripción corta del producto 1.',
+          ),
+          _buildProductCard(
+            '',
+            'Nombre del Producto 2',
+            'Descripción corta del producto 2.',
+          ),
+          _buildProductCard(
+            '',
+            'Nombre del Producto 3',
+            'Descripción corta del producto 3.',
+          ),
+          // Añade más productos aquí...
+        ],
+      ),
+    
+
+  Widget _buildProductCard(String imageUrl, String productName, String productDescription) {
+    return Card(
+      margin: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          children: [
+            Image.network(
+              imageUrl,
+              width: 50, // Ancho de la imagen
+              height: 50, // Alto de la imagen
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(width: 16.0), // Espacio entre la imagen y el texto
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    productName,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8.0), // Espacio entre el nombre y la descripción
+                  Text(
+                    productDescription,
+                    style: const TextStyle(fontSize: 14),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
