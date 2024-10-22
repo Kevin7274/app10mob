@@ -2,6 +2,8 @@ import 'package:cunadelsabor/main.dart';
 import 'package:flutter/material.dart';
 
 class ReservasScreen extends StatefulWidget {
+  const ReservasScreen({super.key});
+
   @override
   Reservascreen createState() => Reservascreen();
 }
@@ -34,7 +36,7 @@ class Reservascreen extends State<ReservasScreen> {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               navigatorKey.currentState!.pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => MyApp()),
+                MaterialPageRoute(builder: (context) => const MyApp()),
                 (Route<dynamic> route) => false,
               );
             },
@@ -47,7 +49,7 @@ class Reservascreen extends State<ReservasScreen> {
             child: Column(
               children: <Widget>[
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'Nombre'),
+                  decoration: const InputDecoration(labelText: 'Nombre'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Ingresa tu nombre';
@@ -61,7 +63,8 @@ class Reservascreen extends State<ReservasScreen> {
                   },
                 ),
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'Número de Teléfono'),
+                  decoration:
+                      const InputDecoration(labelText: 'Número de Teléfono'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Ingresa tu número de teléfono';
@@ -89,11 +92,9 @@ class Reservascreen extends State<ReservasScreen> {
                       firstDate: DateTime.now(),
                       lastDate: DateTime(2101),
                     );
-                    if (pickedDate != null) {
-                      setState(() {
-                        _fechaReserva = pickedDate;
-                      });
-                    }
+                    setState(() {
+                      _fechaReserva = pickedDate;
+                    });
                   },
                   validator: (value) {
                     if (_fechaReserva == null) {
@@ -129,7 +130,8 @@ class Reservascreen extends State<ReservasScreen> {
                   },
                 ),
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'Número de Personas'),
+                  decoration:
+                      const InputDecoration(labelText: 'Número de Personas'),
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -145,19 +147,20 @@ class Reservascreen extends State<ReservasScreen> {
                 ),
                 DropdownButtonFormField<String>(
                   value: _metodoPago,
-                  decoration: InputDecoration(labelText: 'Método de Pago'),
+                  decoration:
+                      const InputDecoration(labelText: 'Método de Pago'),
                   items: const [
                     DropdownMenuItem(
-                      child: Text('Efectivo'),
                       value: 'Efectivo',
+                      child: Text('Efectivo'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Tarjeta de Crédito'),
                       value: 'Tarjeta de Crédito',
+                      child: Text('Tarjeta de Crédito'),
                     ),
                     DropdownMenuItem(
-                      child: Text('PayPal'),
                       value: 'PayPal',
+                      child: Text('PayPal'),
                     ),
                   ],
                   onChanged: (value) {
@@ -185,7 +188,7 @@ class Reservascreen extends State<ReservasScreen> {
                     const Text('Acepto los términos y condiciones'),
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate() &&
@@ -204,7 +207,7 @@ class Reservascreen extends State<ReservasScreen> {
                       );
                     }
                   },
-                  child: Text('Enviar'),
+                  child: const Text('Enviar'),
                 ),
               ],
             ),

@@ -2,6 +2,8 @@ import 'package:cunadelsabor/main.dart';
 import 'package:flutter/material.dart';
 
 class ContactosScreen extends StatefulWidget {
+  const ContactosScreen({super.key});
+
   @override
   Contactoscreen createState() => Contactoscreen();
 }
@@ -34,7 +36,7 @@ class Contactoscreen extends State<ContactosScreen> {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               navigatorKey.currentState!.pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => MyApp()),
+                MaterialPageRoute(builder: (context) => const MyApp()),
                 (Route<dynamic> route) => false,
               );
             },
@@ -49,7 +51,7 @@ class Contactoscreen extends State<ContactosScreen> {
             child: Column(
               children: <Widget>[
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'Nombre'),
+                  decoration: const InputDecoration(labelText: 'Nombre'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Ingresa tu nombre';
@@ -63,7 +65,7 @@ class Contactoscreen extends State<ContactosScreen> {
                   },
                 ),
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'Email'),
+                  decoration: const InputDecoration(labelText: 'Email'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Ingresa tu email';
@@ -77,7 +79,7 @@ class Contactoscreen extends State<ContactosScreen> {
                   },
                 ),
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'Mensaje'),
+                  decoration: const InputDecoration(labelText: 'Mensaje'),
                   maxLines: 4, // Permite múltiples líneas para el mensaje
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -91,7 +93,7 @@ class Contactoscreen extends State<ContactosScreen> {
                     });
                   },
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
@@ -103,7 +105,7 @@ class Contactoscreen extends State<ContactosScreen> {
                       );
                     }
                   },
-                  child: Text('Enviar'),
+                  child: const Text('Enviar'),
                 ),
               ],
             ),

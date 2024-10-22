@@ -9,10 +9,10 @@ class Platillosscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //quitar esto antes de empezar a hacer las rutas
-    final GlobalKey<NavigatorState> _navigatorKey = GlobalKey();
+    final GlobalKey<NavigatorState> navigatorKey = GlobalKey();
     return MaterialApp(
       //quitar esto antes de empezar a hacer las rutas
-      navigatorKey: _navigatorKey,
+      navigatorKey: navigatorKey,
       title: 'Material App',
       home: Scaffold(
         appBar: AppBar(
@@ -21,14 +21,14 @@ class Platillosscreen extends StatelessWidget {
             style: TextStyle(
                 color: Colors.white), // Cambia el color de la fuente a blanco
           ),
-          backgroundColor: Color(0xFF7d1a49),
+          backgroundColor: const Color(0xFF7d1a49),
           //quitar esto antes de empezar a hacer las rutas
 
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              _navigatorKey.currentState!.pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => MyApp()),
+              navigatorKey.currentState!.pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => const MyApp()),
                 (Route<dynamic> route) => false,
               );
             },
