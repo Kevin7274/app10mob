@@ -11,6 +11,7 @@ class Termcondscreen extends StatelessWidget {
     //quitar esto antes de empezar a hacer las rutas
     final GlobalKey<NavigatorState> navigatorKey = GlobalKey();
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       //quitar esto antes de empezar a hacer las rutas
       navigatorKey: navigatorKey,
       title: '',
@@ -28,7 +29,7 @@ class Termcondscreen extends StatelessWidget {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               navigatorKey.currentState!.pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => MyApp()),
+                MaterialPageRoute(builder: (context) => const MyApp()),
                 (Route<dynamic> route) => false,
               );
             },
@@ -36,7 +37,7 @@ class Termcondscreen extends StatelessWidget {
 
           //quitar esto antes de empezar a hacer las rutas
         ),
-        body: Center(
+        body: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

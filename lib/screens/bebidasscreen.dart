@@ -28,7 +28,7 @@ class Bebidasscreen extends StatelessWidget {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               navigatorKey.currentState!.pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => MyApp()),
+                MaterialPageRoute(builder: (context) => const MyApp()),
                 (Route<dynamic> route) => false,
               );
             },
