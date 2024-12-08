@@ -28,7 +28,7 @@ class Aboutscreen extends StatelessWidget {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               navigatorKey.currentState!.pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => const MyApp()),
+                MaterialPageRoute(builder: (context) => MyApp()),
                 (Route<dynamic> route) => false,
               );
             },
@@ -36,9 +36,9 @@ class Aboutscreen extends StatelessWidget {
 
           //quitar esto antes de empezar a hacer las rutas
         ),
-        body: const Center(
+        body: Center(
           child: Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
